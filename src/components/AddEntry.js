@@ -8,7 +8,6 @@ const AddEntry = ({ onAdd }) => {
     type: "expense", // 지출
     memo: "",
     isRecurring: false, // 반복 아님
-    recurrenceInterval: "monthly", // 월간 반복
   });
 // 입력값 변경 처리
 const handleChange = (e) => {
@@ -24,10 +23,9 @@ const handleSubmit = (e) => {
     date: "", 
     category: "", 
     amount: "", 
-    type: "", 
+    type: "expense", 
     memo: "",
     isRecurring: false,
-    recurrenceInterval: "monthly",
   });
 };
   return (
@@ -98,20 +96,8 @@ const handleSubmit = (e) => {
             checked={form.isRecurring}
             onChange={handleChange}
           />
-          반복 항목
+          정기결제
         </label>
-        {form.isRecurring && (
-          <select
-            name="recurrenceInterval"
-            value={form.recurrenceInterval}
-            onChange={handleChange}
-          >
-            <option value="daily">매일</option>
-            <option value="weekly">매주</option>
-            <option value="monthly">매월</option>
-            <option value="yearly">매년</option>
-          </select>
-        )}
       </div>
       <button type="submit">항목 추가</button>
     </form>
