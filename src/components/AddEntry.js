@@ -24,7 +24,7 @@ const handleSubmit = (e) => {
     date: "", 
     category: "", 
     amount: "", 
-    type: "expense", 
+    type: "", 
     memo: "",
     isRecurring: false,
     recurrenceInterval: "monthly",
