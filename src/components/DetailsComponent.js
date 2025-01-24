@@ -6,12 +6,12 @@ const DetailsComponent = ({ date, entries }) => {
     );
 
     if (dailyEntries.length === 0) {
-        return <p>내역이 없습니다.</p>;
+        return <p>선택한 날짜의 내역이 없습니다.</p>;
     }
 
     return (
         <div>
-            <h2>{date.toLocaleDateString()} 내역</h2>
+            <h2>{date.toLocaleDateString()}</h2>
             <ul>
                 {dailyEntries.map((entry) => (
                     <li key={entry.id}>

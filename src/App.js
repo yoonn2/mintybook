@@ -7,24 +7,26 @@ import CalendarComponent from "./components/CalendarComponent";
 import DetailsComponent from "./components/DetailsComponent";
 
 function App() {
-  const [entries, setEntries] = useState([]);
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [entries, setEntries] = useState(() => {
+    const savedEntries = JSON.parse(localStorage.getItem("entries"));
+    return savedEntries || [];
+  });
 
-  // 로컬 스토리지에서 데이터 로드
-  useEffect(() => {
-    const savedEntries = JSON.parse(localStorage.getItem("entries")) || [];
-    setEntries(savedEntries);
-  }, []);
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
   // 로컬 스토리지에 데이터 저장
   useEffect(() => {
-    localStorage.setItem("entries", JSON.stringify(entries));
+    try {
+      console.log("저장 중:", entries); // 디버깅 로그
+      localStorage.setItem("entries", JSON.stringify(entries));
+    } catch (error) {
+      console.error("로컬 스토리지 저장 오류:", error);
+    }
   }, [entries]);
 
   // 항목 추가 처리
   const handleAddEntry = (entry) => {
-    setEntries([...entries, entry]); // 기존 항목에 새 항목 추가
-    console.log("새 항목:", entry); // 콘솔에서 확인
+    setEntries((prevEntries) => [...prevEntries,entry]); // 기존 항목에 새 항목 추가
   };
 
   // 항목 삭제 처리
