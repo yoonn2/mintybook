@@ -25,7 +25,7 @@ const CalendarComponent = ({ entries, onDateSelect }) => {
         const totalExpense= dailyEntries
             .filter((entry) => entry.type === "expense")
             .reduce((sum, entry) => sum + Number(entry.amount), 0);    
-        
+
         if (totalIncome || totalExpense) {
             return (
                 <div>

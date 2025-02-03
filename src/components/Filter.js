@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Filter = ({ onFilterChange }) => {
+const Filter = ({ onSearch }) => {
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [type, setType] = useState("");
+  const [category, setCategory] = useState("");
+
+  const handleSearch = () => {
+    onSearch({ startDate, endDate, type, category });
+  };
+
   return (
     <div>
       <h3>필터링</h3>
       <label>
-        날짜:
+        시작 날짜:
         <input
           type="date"
-          name="date"
-          onChange={(e) => onFilterChange("date", e.target.value)}
+          value={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
+        />
+      </label>
+      <label>
+        종료 날짜:
+        <input
+          type="date"
+          value={endDate}
+          onChange={(e) => setEndDate(e.target.value)}
         />
       </label>
       <label>
         유형:
-        <select name="type" onChange={(e) => onFilterChange("type", e.target.value)}>
+        <select value={type} onChange={(e) => setType(e.target.value)}>
           <option value="">전체</option>
           <option value="income">수입</option>
           <option value="expense">지출</option>
@@ -24,11 +41,11 @@ const Filter = ({ onFilterChange }) => {
         카테고리:
         <input
           type="text"
-          name="category"
-          placeholder="예: 식비"
-          onChange={(e) => onFilterChange("category", e.target.value)}
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
         />
       </label>
+      <button onClick={handleSearch}>검색</button>
     </div>
   );
 };
