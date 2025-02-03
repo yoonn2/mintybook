@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./styles/App.css";
 import AddEntry from "./components/AddEntry";
 import EntryList from "./components/EntryList";
 import Stats from "./components/Stats";
@@ -55,14 +54,16 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>MintyBook</h1>
-      <AddEntry onAdd={handleAddEntry} />
-      <Filter onSearch={handleFilterSearch} />
-      <CalendarComponent entries={entries} onDateSelect={handleDateSelect} />
-      <DetailsComponent date={selectedDate} entries={filteredEntries} />
-      <EntryList entries={filteredEntries} onDelete={handleDeleteEntry} />
-      <Stats entries={entries} />
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-gray-900 p-4">
+      <h1 className="text-4xl font-bold text-blue-600 mb-6">MintyBook</h1>
+      <div className="w-full max-w-2xl bg-white p-6 rounded-lg shadow-md">
+        <AddEntry onAdd={handleAddEntry} />
+        <Filter onSearch={handleFilterSearch} />
+        <CalendarComponent entries={entries} onDateSelect={handleDateSelect} />
+        <DetailsComponent date={selectedDate} entries={filteredEntries} />
+        <EntryList entries={filteredEntries} onDelete={handleDeleteEntry} />
+        <Stats entries={entries} />
+      </div>
     </div>
   );
 }

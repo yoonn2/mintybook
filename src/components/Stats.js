@@ -1,4 +1,4 @@
-import "../styles/Stats.css";
+
 
 const Stats = ({ entries }) => {
     // 총 수입 계산
