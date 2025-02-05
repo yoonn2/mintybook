@@ -62,20 +62,22 @@ function App() {
           📊 MintyBook 가계부
         </h1>
 
-        {/* ✅ 반응형 레이아웃: PC에서는 가로 2열, 모바일에서는 세로 정렬 */}
+        {/* ✅ PC에서는 2열 정렬, 모바일에서는 세로 정렬 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-gray-700 p-5 rounded-lg shadow-lg">
-            <h2 className="text-lg font-semibold text-gray-200 mb-3">💰 항목 추가</h2>
-            <AddEntry onAdd={handleAddEntry} />
-          </div>
+          <div className="w-full flex flex-col space-y-4 md:space-y-0 md:flex-row md:gap-6">
+            <div className="bg-gray-700 p-5 rounded-lg shadow-lg w-full md:w-1/2">
+              <h2 className="text-lg font-semibold text-gray-200 mb-3">💰 항목 추가</h2>
+              <AddEntry onAdd={handleAddEntry} />
+            </div>
 
-          <div className="bg-gray-700 p-5 rounded-lg shadow-lg">
-            <h2 className="text-lg font-semibold text-gray-200 mb-3">🔎 필터</h2>
-            <Filter onSearch={handleFilterSearch} />
+            <div className="bg-gray-700 p-5 rounded-lg shadow-lg w-full md:w-1/2">
+              <h2 className="text-lg font-semibold text-gray-200 mb-3">🔎 필터</h2>
+              <Filter onSearch={handleFilterSearch} />
+            </div>
           </div>
         </div>
 
-        {/* ✅ 캘린더, 내역, 통계 → 한 줄씩 정렬 */}
+        {/* ✅ 캘린더, 내역, 통계는 한 줄씩 배치 */}
         <div className="bg-gray-700 p-5 rounded-lg shadow-lg mt-6">
           <h2 className="text-lg font-semibold text-gray-200 mb-3">📅 캘린더</h2>
           <CalendarComponent entries={entries} onDateSelect={handleDateSelect} />
