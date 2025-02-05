@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/mintybook/static/css/main.592f853f.css",
-    "main.js": "/mintybook/static/js/main.761043a3.js",
+    "main.css": "/mintybook/static/css/main.39733946.css",
+    "main.js": "/mintybook/static/js/main.87cd8ec0.js",
     "index.html": "/mintybook/index.html",
-    "main.592f853f.css.map": "/mintybook/static/css/main.592f853f.css.map",
-    "main.761043a3.js.map": "/mintybook/static/js/main.761043a3.js.map"
+    "main.39733946.css.map": "/mintybook/static/css/main.39733946.css.map",
+    "main.87cd8ec0.js.map": "/mintybook/static/js/main.87cd8ec0.js.map"
   },
   "entrypoints": [
-    "static/css/main.592f853f.css",
-    "static/js/main.761043a3.js"
+    "static/css/main.39733946.css",
+    "static/js/main.87cd8ec0.js"
   ]
 }
