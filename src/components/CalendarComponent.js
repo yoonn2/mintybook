@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 
 
-const CalendarComponent = ({ entries, onDateSelect }) => {
+const CalendarComponent = ({ entries = [] , onDateSelect }) => {
     const [selectedDate, setSelectedDate] = useState(new Date());
 
     //날짜 클릭 시 호출

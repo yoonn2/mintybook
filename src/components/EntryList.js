@@ -9,9 +9,9 @@ const EntryList = ({ entries, onDelete }) => {
   return (
     <div className="mt-4">
       <h2 className="text-xl font-semibold text-gray-800">내역</h2>
-      <ul className="mt-2 space-y-2">
+      <ul className="space-y-3">
         {entries.map((entry) => (
-          <li key={entry.id} className="p-3 border rounded-lg bg-white shadow-sm flex justify-between items-center">
+          <li key={entry.id} className="bg-gray-700 p-4 rounded-lg flex justify-between items-center shadow-md">
             <div className={entry.type === "expense" ? "expense" : "income"}>
               <span className="font-bold text-gray-800">{entry.date}</span> - {entry.category}: {entry.amount.toLocaleString()}원 (
               {entry.type === "expense" ? "지출" : "수입"})
@@ -20,7 +20,7 @@ const EntryList = ({ entries, onDelete }) => {
             {entry.memo && <div className="memo">{entry.memo}</div>}
             <button
               onClick={() => onDelete(entry.id)}
-              className="text-red-500 hover:text-red-700"
+              className="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded-md"
               aria-label={`${entry.category} 항목 삭제`}
             >
               삭제

@@ -2,6 +2,7 @@
   "name": "mintybook",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://yoonn2.github.io/mintybook",
   "dependencies": {
     "cra-template": "1.2.0",
     "react": "^19.0.0",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@tailwindcss/postcss": "^4.0.3"
+    "@tailwindcss/postcss": "^4.0.3",
+    "gh-pages": "^6.3.0"
   }
 }
