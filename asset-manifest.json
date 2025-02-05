@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mintybook/static/css/main.592f853f.css",
+    "main.js": "/mintybook/static/js/main.761043a3.js",
+    "index.html": "/mintybook/index.html",
+    "main.592f853f.css.map": "/mintybook/static/css/main.592f853f.css.map",
+    "main.761043a3.js.map": "/mintybook/static/js/main.761043a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.592f853f.css",
+    "static/js/main.761043a3.js"
+  ]
+}
